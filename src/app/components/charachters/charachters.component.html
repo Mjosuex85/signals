@@ -1,0 +1,29 @@
+<app-searcher 
+    [label]="'Search Character'"
+    [place_holder]="'Rick, Morty...'" >
+</app-searcher>  
+
+<app-filters [currentCriteria]="criteria()"></app-filters>
+
+<div class="characters">
+    @if (charactersResource.isLoading()) {
+        <app-loader />
+    } 
+    @else if (charactersResource.error()) {
+        <span> Error loading characters </span>
+        <button (click)="charactersResource.reload()">Reintentar</button>
+    } 
+    @else {
+        @for (character of characters(); track character.id) {
+            <app-card [character]="character" />
+        } 
+        @empty {
+            <span>No se encontraron resultados</span>
+        }
+    }
+</div>
+
+<app-pagination 
+    [currentPage]="currentPage()"
+    [pagination]="pagination()">
+</app-pagination>

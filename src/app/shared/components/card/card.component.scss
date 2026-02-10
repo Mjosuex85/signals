@@ -1,0 +1,19 @@
+.cards {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+mat-card {
+  background-color: orangered;
+  color: whitesmoke;
+  cursor: pointer;
+  height: 7rem;
+  width: 15rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+}

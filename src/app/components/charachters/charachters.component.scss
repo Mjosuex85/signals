@@ -1,0 +1,20 @@
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.loading {
+    margin: 20px;
+}
+
+.alive {
+    background-color: green;
+    color: rgb(255, 255, 255);
+}
+
+.dead {
+
+    background-color: black;
+  color: red;
+}

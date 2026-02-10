@@ -1,0 +1,16 @@
+.filter {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+
+.active {
+  background-color: var(--primary-color, #007bff) !important;
+  color: white;
+  border-color: transparent;
+  // Añade un box-shadow o escala si quieres que destaque más
+  transform: scale(1.05);
+}

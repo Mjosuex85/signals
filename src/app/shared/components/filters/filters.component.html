@@ -1,0 +1,27 @@
+<div class="filter">
+    <button 
+  [class.active]="currentCriteria().status === 'alive'"
+  (click)="applyFilter('status', 'alive')">
+  Alive
+</button>
+
+<button 
+  [class.active]="currentCriteria().status === 'dead'"
+  (click)="applyFilter('status', 'dead')">
+  Dead
+</button>
+
+<!-- Ejemplo para Género -->
+<button 
+  [class.active]="currentCriteria().gender === 'female'"
+  (click)="applyFilter('gender', 'female')">
+  Female
+</button>
+
+<button 
+  [class.active]="currentCriteria().gender === 'male'"
+  (click)="applyFilter('gender', 'male')">
+  Male
+</button>
+
+</div>

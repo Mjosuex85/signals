@@ -1,0 +1,46 @@
+ <app-searcher
+    [place_holder]="'Earth, Bird World...'"
+    [label]="'Search Location'">
+ </app-searcher>
+ 
+ <div class="locations">
+        @if(locationsResource.isLoading()) {
+            <app-loader></app-loader>
+        }
+
+        @if(locationsResource.error()) {
+            <span>Error...</span>
+        }
+        @if(locationsResource.value()?.results) {
+             @for(location of locations(); track location.id) {
+                <div class="locationsCard" >
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-size: large; font-weight: bold;" >{{location.name}}</span>
+                        <span style="font-size: large; font-weight: bold;">{{location.type}}</span>
+                    </div>
+            
+                    <div class="subTitle">
+                        <span style="font-size: small; margin-top: 2px; margin-bottom: 20px;" >{{location.dimension}}</span>
+                        <span>Residents: {{location.residents.length}}</span>
+                    </div>
+
+                    <div style="border: 1px solid rgba(0, 0, 0, 0.175); height: fit-content; margin-top: 5px;">
+                        sds
+                        displaydas
+                        das
+                        das
+                        displaydasads
+                    </div>
+                    <span class="elemento">{{location.created | date:'dd/MM/yyyy' }}</span>
+                </div>
+            }
+        }
+</div>
+
+<app-pagination 
+    [currentPage]="currentPage()"
+    [pagination]="pagination()">
+</app-pagination>
+ 
+
+

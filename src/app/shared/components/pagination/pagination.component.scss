@@ -1,0 +1,22 @@
+.paginator {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 6px;
+  cursor: pointer;
+
+  background: transparent;
+  color: #333;
+  font-weight: 500;
+}
+
+.paginator.active {
+  background-color: orangered;
+  color: white;
+}

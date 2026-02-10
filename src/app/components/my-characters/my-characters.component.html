@@ -1,0 +1,17 @@
+<div class="myCh">
+    <h1 (click)="addNewCharacter()">Add New Character (test)</h1>
+
+
+    @if(myCharacters().length === 0) {
+        <div style="justify-self: center; margin: 50px;" >There is not a characters here, you need to create at least one</div>
+    }
+
+    <div class="characters">
+        @for(character of myCharacters(); track character.id) {
+            <app-card 
+                [character]="character">
+            </app-card>
+         }
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+<nav>
+    <div>
+        <h5>Ricky Morty</h5>
+    </div>
+
+    <div class="links">
+        @for(route of rutas(); track route ) {
+                <span [class.active]="route === currentLink()" (click)="navigate(route)" > {{route | Capitalize }} </span>
+        }
+    </div>
+
+    <div>
+        {{profile}}
+    </div>
+</nav>

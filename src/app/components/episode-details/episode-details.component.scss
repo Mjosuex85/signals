@@ -1,0 +1,48 @@
+.container {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: rgba(255, 166, 0, 0.781);
+
+
+    h1 {
+        font-size: 70px;
+        line-height: 0.9;
+        margin: 0;
+        width: 40rem;
+        margin-right: 5rem;
+    }
+
+    button {
+        margin-top: 12px;
+        margin-right: 8px;
+    }
+}
+
+head {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3rem ;
+}
+
+
+.images {
+    /* border: 1px solid;
+    border-color: rgb(83, 77, 77); */
+    margin: 5px;
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,2);
+  }
+}
+
+.images_container {
+    width: 850px;
+}

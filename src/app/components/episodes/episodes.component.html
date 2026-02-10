@@ -1,0 +1,34 @@
+<app-searcher
+    [label]="'Search Episode'"
+    [place_holder]="'Pilot, Pickle Rick...'">
+</app-searcher>
+
+<div style="display: flex; flex-wrap: wrap;"  >
+
+    @if(episodesResource.isLoading()) {
+        <app-loader></app-loader>
+    }
+
+    @else if(episodesResource.error()) {
+        <span>Error....</span>
+    }
+
+    @else {
+        @for (episode of episodes(); track $index) {
+        <div class="card" (click)="getEpisodeDetails(episode.id.toString())">   
+            <h2>{{episode.name}}</h2>
+            <p>{{episode.air_date | date:'dd/MM/yyyy'}}</p>
+            <p>{{episode.episode | seasonEpisode}}</p>
+        </div>
+       }
+
+        @empty {
+            <div>Not data found, try Again</div>
+        }
+    }
+</div>
+
+<app-pagination 
+    [currentPage]="currentPage()"
+    [pagination]="pagination()" >
+</app-pagination>

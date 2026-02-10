@@ -1,0 +1,48 @@
+<div> 
+    <section class="container">
+            <div class="details">
+                @if(episodeResource.isLoading()) {
+                <app-loader></app-loader>
+            }
+            @if(episodeResource.error()) {
+                <span>Error</span>
+            }
+            @if(episodeResource.value()) {
+                <h1>{{episodes()?.name}}</h1>
+                <button (click)="nextEpisode('prev')" [disabled]="this.episodeId() === '1'" matButton="filled">Previus</button>
+                <button (click)="nextEpisode('next')" [disabled]="this.episodeId() === '51'" matButton="filled">Next</button>
+                <p>{{episodes()?.air_date}}</p>
+                <p>{{episodes()?.episode || '' | seasonEpisode }}</p>
+                <div>
+                    <app-video></app-video>
+                </div>
+            }
+
+            </div>
+
+            <div class="images_container">
+                @if (charactersResource.isLoading()) {
+                    <app-loader></app-loader>
+                }
+                @if (charactersResource.error()) {
+                    <span>Error</span>
+                }
+                @if (charactersResource.value()) {
+                
+                        @for (character of characters(); track $index) {
+                            <img class="images" 
+                                (click)="goToCharacterDetails(character?.id)" 
+                                [title]="character?.name" 
+                                [src]="character?.image" 
+                                [alt]="character?.name">
+                        }
+                  
+                }
+            </div>
+
+    
+            
+
+    </section>
+
+</div>

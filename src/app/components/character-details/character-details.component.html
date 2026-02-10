@@ -1,0 +1,46 @@
+@if(characterResources.isLoading()) {
+    <app-loader></app-loader>
+}
+@if(characterResources.error()) {
+    <span>Error</span>
+}
+
+ @if(characterResources.value()) {
+
+<section style="display: flex;">
+    <div class="container">
+            <div class="picture">
+                <h1>{{character()?.name}}</h1>
+                <img [src]="character()?.image" [alt]="character()?.name">
+            </div>
+            <div class="details">
+            <p> <strong> Gender: </strong>  {{character()?.gender}} </p>
+            <p> <strong> Status: </strong> {{character()?.status}} </p>
+            <p> <strong> Species:</strong>  {{character()?.species}}  </p>
+            <p> <strong> Origin:</strong>  {{character()?.origin?.name}}  </p>
+            <p> <strong> Location:</strong> {{character()?.location?.name}} </p>
+            <p> <strong> Created:</strong>  {{character()?.created | date: 'dd/MM/yyyy'}} </p>
+            <p> <strong> Episodes:</strong>  {{character()?.episode?.length}} </p>
+            </div>
+    </div>
+
+    <div class="episodes_container">
+
+        @if(episodeResources.error()) {
+            <p>{{episodeResources.error()}}</p>
+        }
+
+        @if(episodeResources.isLoading()) {
+            <app-loader></app-loader>
+        }
+
+        @if(episodeResources.value()) {
+            @for(episode of episodeResources.value(); track $index ) {
+                <span (click)="goToEpisode(episode.id)" > - {{ episode.name }} </span>
+            
+            }
+        }
+    </div>
+</section>
+}
+

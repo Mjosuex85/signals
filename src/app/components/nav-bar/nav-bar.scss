@@ -1,0 +1,45 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    background-color: orangered;
+}
+
+h5 {
+  margin: 0;
+}
+
+.links {
+  position: relative;
+  display: flex;
+}
+
+
+
+.links span {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0 13px; /* espacio horizontal entre enlaces */
+  cursor: pointer;
+
+  
+}
+
+.links span.active {
+  color: white;
+}
+
+
+.links p:hover {
+  background-color: transparent;
+  color: rgba(255, 166, 0, 0.866);
+}
+
+.locations {
+  color: red;
+}
+

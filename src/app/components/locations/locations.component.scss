@@ -1,0 +1,28 @@
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+}
+
+.locationsCard {
+    position: relative;
+    border: 1px solid black;
+    margin: 10px;
+    width: 450px;
+    height: 250px;
+    padding: 8px;
+}
+
+.subTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.elemento {
+  position: absolute;   /* Posición absoluta dentro del contenedor relativo */
+  bottom: 0;            /* Pegado al fondo */
+  right: 0;             /* Pegado a la derecha */
+  background-color: coral;
+  padding: 5px;
+}
