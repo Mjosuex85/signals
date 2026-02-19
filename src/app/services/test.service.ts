@@ -9,26 +9,18 @@ import { Criteria } from '../shared/interfaces/common.interfaces';
 @Injectable({
   providedIn: 'root',
 })
-export class LocationsService {
+export class TestService {
 
   private apiService = inject(ApiService)
 
   /* TODO: fix unknow tipe */
-  getAllLocations(criteria?: Criteria): Observable<ApiResponse<Location>> {
+  getTestData(): Observable<any> {
 
-    const params = Object.fromEntries(
-      Object.entries(Object(criteria)).filter(([_, value]) => value)
-    );
-    
-    return this.apiService.get<ApiResponse<Location>>(`location`, { params }).pipe(
+    return this.apiService.get<any>(`https://menu.tillersystems.com/internal/stores/40726/menus/1`).pipe(
       catchError((error) => throwError(() => new Error(`Api Error ${error}`)))
-    )
+    )       
+ 
   }
 
-  getLocationsById(id: string): Observable<ApiResponse<Location>> {
-    return this.apiService.get<ApiResponse<Location>>(`location/${id}`).pipe(
-      catchError((error) => throwError(() => new Error(`Api Error ${error}`))) 
-    )
-  }
 
 }

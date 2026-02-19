@@ -1,5 +1,5 @@
 import { Component, computed, OnInit, signal } from '@angular/core';
-import { Character } from '../../shared/interfaces/data.interface';
+import { Character } from '../../shared/interfaces/data-interfaces/characters.interface';
 import { CardComponent } from '../../shared/components/card/card.component';
 
 

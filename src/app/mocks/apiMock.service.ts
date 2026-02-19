@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Character } from '../shared/interfaces/data.interface';
-import { Location } from '../shared/interfaces/data.interface';
+import { Character } from '../shared/interfaces/data-interfaces/characters.interface';
+import { Location } from '../shared/interfaces/data-interfaces/locations.interfaces'; 
 import { characters } from './characters.mock';
 import { episodes } from './episodes.mock';
 import { Observable, of } from 'rxjs';
 import { locations } from './locations.mock';
-import { ApiResponse } from '../shared/interfaces/Response.interface';
+import { ApiResponse } from '../shared/interfaces/api-response.interface';
 
 @Injectable({
   providedIn: 'root',

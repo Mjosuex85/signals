@@ -7,6 +7,7 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 
 
 export const routes: Routes = [
+    { path: '', redirectTo: '/characters', pathMatch: 'full' },
     { path: 'characters', loadComponent: () => import('./components/charachters/charachters.component').then(m => m.CharachtersComponent) },
     { path: 'episodes', loadComponent: () => import('./components/episodes/episodes.component').then(m => m.EpisodesComponent)},
     { path: 'locations', loadComponent: () => import('./components/locations/locations.component').then(m => m.LocationsComponent)},

@@ -9,9 +9,6 @@ import { catchError, Observable, tap, throwError } from "rxjs";
 export class ApiService {
 
     private readonly BASE_URL = 'https://rickandmortyapi.com/api/';
-
-    /* constructor(private http: HttpClient) {} */
-
     http = inject(HttpClient)
 
     get<T>(url: string, options?: object): Observable<T> { 

@@ -1,6 +1,5 @@
 <div class="main">
     <button [disabled]="pagination().prev === null" (click)="arrowPageChange('-')"> Prev </button>
-       
     @for(page of pages(); track $index) {
         <button 
             class="paginator" 
@@ -8,6 +7,9 @@
             (click)="goToPage(page)"> {{ page }} 
         </button>
     }
+    <!-- <button [disabled]="pagination().next === null" disabled (click)="arrowPageChange('+')"> Next</button> -->
 
-    <button [disabled]="pagination().next === null" disabled (click)="arrowPageChange('+')"> Next</button>
+
+    <mat-icon class="arrows">arrow_forward</mat-icon>
+
 </div>

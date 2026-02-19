@@ -4,7 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searcher',
@@ -14,14 +14,17 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./searcher.component.scss']
 })
 export class CharactersSearchComponent {
-  
+
+  /* Dependencies Injection */
+  router = inject(Router)
+
+  /* Wrapper */
   searchCriteria = signal('')
 
-  @Input() label: string = ''
-  @Input() place_holder: string = ''
-  @Input() criteria!: WritableSignal<any>
+  label = input<string>('')
+  place_holder = input<string>('')
+  criteria = input<WritableSignal<string>>()
 
-  router = inject(Router)
 
   search() {
     this.router.navigate([], {

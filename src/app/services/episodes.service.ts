@@ -1,9 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { ApiService } from './api.service';
-import { ApiResponse } from '../shared/interfaces/Response.interface';
-import { Episode } from '../shared/interfaces/data.interface';
+import { ApiResponse } from '../shared/interfaces/api-response.interface';
 import { Criteria } from '../shared/interfaces/common.interfaces';
+import { Episode } from '../shared/interfaces/data-interfaces/episode.interfaces';
 
 @Injectable({
   providedIn: 'root',

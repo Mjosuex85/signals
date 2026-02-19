@@ -17,7 +17,6 @@
                     <app-video></app-video>
                 </div>
             }
-
             </div>
 
             <div class="images_container">
@@ -31,7 +30,7 @@
                 
                         @for (character of characters(); track $index) {
                             <img class="images" 
-                                (click)="goToCharacterDetails(character?.id)" 
+                                (click)="goToCharacterDetails(character.id)" 
                                 [title]="character?.name" 
                                 [src]="character?.image" 
                                 [alt]="character?.name">

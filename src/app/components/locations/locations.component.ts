@@ -1,9 +1,5 @@
 import { Component, computed, effect, inject, input, OnInit, signal } from '@angular/core';
 import { LocationsService } from '../../services/locations.service';
-import { Location } from '../../shared/interfaces/data.interface';
-import { Pagination } from '../../shared/interfaces/Pagination.interface';
-import { CharacterService } from '../../services/character.service';
-import { Character } from '../../shared/interfaces/data.interface';
 import { DatePipe } from '@angular/common';
 import { PaginationComponent } from "../../shared/components/pagination/pagination.component";
 import { rxResource } from '@angular/core/rxjs-interop';

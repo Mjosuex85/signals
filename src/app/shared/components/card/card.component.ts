@@ -1,7 +1,12 @@
-import { Component, inject, Input } from '@angular/core';
-import { Character } from '../../interfaces/data.interface';
+import { Component, effect, inject, input } from '@angular/core';
+import { CharacterPreview, ID, MyReadonly } from '../../interfaces/data-interfaces/characters.interface';
 import { Router } from '@angular/router';
 import { MaterialModule } from '../../material/material.module';
+
+interface Punto2D {
+    x: number;
+    y: number;
+}
 
 @Component({
   selector: 'app-card',
@@ -10,15 +15,18 @@ import { MaterialModule } from '../../material/material.module';
   styleUrl: './card.component.scss'
 })
 
+
 export class CardComponent {
 
-  @Input() character: Character = {} as Character;
+  router = inject( Router )
 
-  router = inject(Router)
+  character = input.required<CharacterPreview>()
 
 
 
-  clickin(character: Character) {
-    this.router.navigate(['/characters', character.id])
+
+
+  clickiIn(id: ID): void {
+    this.router.navigate(['/characters', id])
   }
 }

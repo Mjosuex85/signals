@@ -10,6 +10,7 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { VideoComponent } from "../../shared/components/video/video.component";
 import { SeasonEpisodePipe } from '../../shared/pipes/parseEpisode.pipe';
+import { ID } from '../../shared/interfaces/data-interfaces/characters.interface';
 
 @Component({
   selector: 'app-episode-details',
@@ -59,8 +60,7 @@ export class EpisodeDetailsComponent {
     }
   });
 
-  goToCharacterDetails(id: number | undefined) {
-    if(id === undefined) return
+  goToCharacterDetails(id: ID) {
     this.router.navigate(['/characters', id])
   }
 

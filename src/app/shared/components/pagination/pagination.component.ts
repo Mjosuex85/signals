@@ -1,11 +1,12 @@
 import { Component, computed, effect, inject, input } from '@angular/core';
-import { Pagination } from '../../interfaces/Pagination.interface';
+import { Pagination } from '../../interfaces/common.interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-pagination',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './pagination.component.html',
   styleUrl: './pagination.component.scss',
 })
@@ -30,8 +31,6 @@ export class PaginationComponent {
 
   goToPage(page: number) {
     const direction = page > this.currentPage() ? 'next' : 'prev';
-
-  // Añadimos la clase temporal al HTML
   const html = document.documentElement;
   html.classList.add(direction);
     this.router.navigate([], {

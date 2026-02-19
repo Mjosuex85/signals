@@ -24,9 +24,6 @@ import { FiltersComponent } from "../../shared/components/filters/filters.compon
 export class CharachtersComponent {
 
   characterService = inject(CharacterService)
-
-  
-
   /* 
     Url inputs.
     It came from the URL with withComponentInputBinding() 
