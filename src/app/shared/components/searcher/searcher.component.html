@@ -1,9 +1,11 @@
 <div class="search-container">
   <mat-form-field appearance="outline" class="search-field">
     <mat-label>{{label()}}</mat-label>
-    <input matInput (input)="searchCriteria.set($any($event.target).value)" [placeholder]="place_holder()">
+    <input (keydown.enter)="search()" 
+           matInput (input)="searchCriteria.set($any($event.target).value)" 
+           [placeholder]="place_holder()">
     <button mat-icon-button matSuffix aria-label="Buscar">
-      <mat-icon (click)='search()' >search</mat-icon>
+      <mat-icon (click)='search()'>search</mat-icon>
     </button>
   </mat-form-field>
 </div>
